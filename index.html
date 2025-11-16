@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namuddu Hadijjah | Professional Developer Portfolio</title>
+    <style>
+        /* Global Reset and Typography */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #18338d;
+            box-shadow: 0 10px 15px -3px rgb(252, 4, 4);
+            scroll-behavior: smooth;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .text-primary { color: #bb4829; /* Deep Orange */ }
+        .bg-primary { background-color: #FF7043; }
+        .bg-dark { background-color: #2c3e50; }
+        .shadow-lg { box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); }
+        .rounded-xl { border-radius: 1rem; }
+
+        /* Header and Navigation (Connection & Convenience) */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(206, 152, 152, 0.95);
+            box-shadow: 0 10px 15px -3px rgb(252, 4, 4);
+            backdrop-filter: blur(5px);
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(253, 205, 46, 0.986);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #62ff43;
+            box-shadow: 0 10px 15px -3px rgb(252, 4, 4);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 6rem 0;
+            min-height: 100vh;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 3rem;
+            display: inline-block;
+            border-bottom: 5px solid #FF7043;
+            padding-bottom: 0.5rem;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            color: #2c3e50;
+        }
+
+        /* 1. Home Section (Context & Content) */
+        #home {
+            background: linear-gradient(135deg, #78a045 0%, #fff 100%);
+            display: flex;
+            align-items: center;
+            padding-top: 5rem; /* account for fixed header */
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3rem;
+            padding: 4rem 0;
+        }
+
+        .hero-text {
+            max-width: 55%;
+        }
+
+        .hero-text h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        .hero-image-wrapper {
+            max-width: 40%;
+            position: relative;
+            transform: rotate(3deg);
+            transition: transform 0.5s ease;
+            box-shadow: 0 10px 15px -3px rgb(252, 4, 4);
+        }
+        
+        .hero-image-wrapper:hover {
+            transform: rotate(0deg);
+            box-shadow: 0 10px 15px -3px rgb(12, 252, 4);
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            border-radius: 1.5rem;
+            border: 8px solid #fff;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 0.75rem 1.75rem;
+            border-radius: 0.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-right: 1rem;
+        }
+
+        .cta-primary {
+            background-color: #FF7043;
+            color: white;
+        }
+
+        .cta-primary:hover {
+            background-color: #E65100;
+            transform: translateY(-2px);
+        }
+
+        .cta-secondary {
+            background-color: #fff;
+            color: #FF7043;
+            border: 2px solid #FF7043;
+        }
+        .cta-secondary:hover {
+            background-color: #FF7043;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* 2. About Me (Credibility & Customization) */
+        #about {
+            background-color: #e7afad;
+            padding-top: 4rem;
+        }
+        
+        .about-content {
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+            flex-direction: row;
+        }
+
+        .about-text {
+            flex: 2;
+        }
+
+        .about-image-circle {
+            flex: 1;
+            max-width: 300px;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 50%;
+            border: 8px solid white;
+            box-shadow: 0 5px 15px rgb(221, 245, 6);
+        }
+
+        .about-image-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            box-shadow: 0 10px 15px -3px rgb(252, 4, 4);
+        }
+
+        .seven-cs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .c-card {
+            background-color: #e4eeb8;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 10px rgb(145, 118, 2);
+            transition: transform 0.3s ease;
+
+        }
+        .c-card:hover {
+            transform: translateY(-5px);
+            border-bottom: 4px solid #FF7043;
+            box-shadow: 0 10px 15px -3px rgb(11, 248, 3);
+        }
+        .c-card h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #FF7043;
+        }
+        .c-card p {
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        /* 3. Portfolio (Content) */
+        #portfolio {
+            background-color: #98e778;
+            padding-top: 4rem;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: #e4eeb8;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgb(4, 245, 185);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgb(255, 56, 1);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-info h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-info .tech-stack {
+            display: inline-block;
+            background-color: #f39c12;
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 0.3rem;
+            font-size: 0.8rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* 4. Contact (Communication & Connection) */
+        #contact {
+            background-color: #2c3e50;
+            color: white;
+            padding-top: 4rem;
+            min-height: 80vh;
+        }
+
+        #contact h2 {
+            color: white;
+            border-bottom-color: #FF7043;
+        }
+
+        .contact-layout {
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        .contact-form-container {
+            flex: 2;
+            background-color: #34495e;
+            padding: 2.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgb(137, 247, 115);
+        }
+
+        .contact-info-container {
+            flex: 1;
+            background-color: #FF7043;
+            padding: 2.5rem;
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: 0 10px 15px -3px rgb(252, 4, 4);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            border: 1px solid #555;
+            background-color: #dcf1f7;
+            color: #333;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #FF7043;
+            box-shadow: 0 0 0 3px rgb(245, 60, 4);
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background-color: #FF7043;
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .submit-btn:hover {
+            background-color: #E65100;
+            transform: translateY(-1px);
+            box-shadow: 0 10px 15px -3px rgb(252, 4, 4);
+        }
+
+        .info-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            margin-bottom: 1rem;
+            box-shadow: 0 10px 15px -3px rgb(214, 136, 136);
+        }
+
+        .contact-info-container h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+            font-weight: 700;
+        }
+        .contact-info-container p {
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            justify-content: center;
+        }
+
+        .contact-item svg {
+            width: 24px;
+            height: 24px;
+            margin-right: 0.75rem;
+            fill: white;
+        }
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: text-decoration 0.3s ease;
+        }
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: #aaa;
+            text-align: center;
+            padding: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: #FF7043;
+            text-decoration: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-content, .about-content, .contact-layout {
+                flex-direction: column;
+            }
+            .hero-text, .hero-image-wrapper, .about-text, .about-image-circle, .contact-form-container, .contact-info-container {
+                max-width: 100%;
+                text-align: center;
+            }
+            .about-image-circle {
+                margin: 0 auto 2rem auto;
+            }
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            h2 {
+                font-size: 2rem;
+            }
+            section {
+                padding: 4rem 0;
+            }
+            .hero-content {
+                gap: 2rem;
+            }
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            .nav-links {
+                gap: 1rem;
+            }
+            .contact-info-container {
+                padding: 1.5rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header and Navigation -->
+    <header>
+        <div class="container navbar">
+            <a href="#home" class="logo">Hadijjah<span class="text-primary">.dev</span></a>
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About Me</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. Home Section -->
+        <section id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Hi, I'm <span class="text-primary">Namuddu Hadijjah</span>, a Creative Developer.</h1>
+                        <p>I build elegant, high-performance web applications following principles of clear **Context** and compelling **Content**.</p>
+                        <div class="cta-group">
+                            <a href="#portfolio" class="cta-btn cta-primary">View My Work</a>
+                            <a href="#contact" class="cta-btn cta-secondary">Get in Touch</a>
+                        </div>
+                    </div>
+                    <div class="hero-image-wrapper shadow-lg">
+                        <!-- Image Snapchat-610903537.jpg for Hero (Professional/Working Vibe) -->
+                        <img src="Snapchat-610903537.jpg" alt="Professional portrait of Namuddu Hadijjah working on a laptop" class="hero-image" onerror="this.onerror=null;this.src='https://placehold.co/400x500/FF7043/ffffff?text=Professional+Image';">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. About Me Section -->
+        <section id="about">
+            <div class="container">
+                <h2>My Approach & The 7 C's</h2>
+                
+                <div class="about-content">
+                    <div class="about-image-circle">
+                        <!-- Image 1758424733681_100.PNG for About Me (Headphones/Concentrating Vibe) -->
+                        <img src="1758424733681_100.PNG" alt="Namuddu Hadijjah in a relaxed setting" onerror="this.onerror=null;this.src='https://placehold.co/300x300/34495e/ffffff?text=About+Me';">
+                    </div>
+                    <div class="about-text">
+                        <p style="font-size: 1.1rem; margin-bottom: 1.5rem; color: #555;">
+                            I focus on creating digital experiences that are not only functional but also deeply human-centered. This philosophy is rooted in the **7 C's of Web Design**, ensuring every project delivers maximum value and quality.
+                        </p>
+                        
+                        <div class="seven-cs-grid">
+                            <div class="c-card"><h4>Context</h4><p>Clarity in purpose and intuitive structure.</p></div>
+                            <div class="c-card"><h4>Content</h4><p>Relevant, high-quality, and valuable information.</p></div>
+                            <div class="c-card"><h4>Credibility</h4><p>Building trust through transparent and accurate information.</p></div>
+                            <div class="c-card"><h4>Customization</h4><p>Personalized and responsive user experiences.</p></div>
+                            <div class="c-card"><h4>Communication</h4><p>Easy, two-way interaction (forms, chat).</p></div>
+                            <div class="c-card"><h4>Connection</h4><p>Integration with other sites and resources.</p></div>
+                            <div class="c-card"><h4>Convenience</h4><p>Ease of use, speed, and accessibility.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Portfolio Section -->
+        <section id="portfolio">
+            <div class="container">
+                <h2>Project Showcase</h2>
+
+                <div class="portfolio-grid">
+                    
+                    <!-- Project 1: Image Ecommerce-KPI-dashboard.png (Used as Project Thumbnail) -->
+                    <div class="project-card">
+                        <img src="Ecommerce-KPI-dashboard.png" alt="Project Thumbnail: E-Commerce Platform" onerror="this.onerror=null;this.src='https://placehold.co/400x200/4CAF50/ffffff?text=Project+One';">
+                        <div class="project-info">
+                            <h3>E-Commerce Dashboard</h3>
+                            <span class="tech-stack">React & Firebase</span>
+                            <p>Built a responsive dashboard with user **Customization** options, allowing personalized reporting views and drag-and-drop widgets for ultimate **Convenience**.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Image twocol_layouts.gif  (Used as Project Thumbnail) -->
+                    <div class="project-card">
+                        <img src="twocol_layouts.gif" alt="Project Thumbnail: Data Visualization" onerror="this.onerror=null;this.src='https://placehold.co/400x200/2196F3/ffffff?text=Project+Two';">
+                        <div class="project-info">
+                            <h3>Real-Time Data Viz Tool</h3>
+                            <span class="tech-stack">Vue.js & D3.js</span>
+                            <p>Designed a visualizer to present complex scientific **Content** with crystal clear **Context**, ensuring data **Credibility** through live source links.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Image serving-your-developer-community-with-advertising-1000x558-1.jpg(Used as Project Thumbnail) -->
+                    <div class="project-card">
+                        <img src="serving-your-developer-community-with-advertising-1000x558-1.jpg" alt="Project Thumbnail: Community Blog" onerror="this.onerror=null;this.src='https://placehold.co/400x200/9C27B0/ffffff?text=Project+Three';">
+                        <div class="project-info">
+                            <h3>Developer Community Blog</h3>
+                            <span class="tech-stack">Python & Django</span>
+                            <p>A platform built around user **Communication** and **Connection**, featuring integrated commenting, forums, and easy external sharing tools.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <h2>Contact Me</h2>
+
+                <div class="contact-layout">
+                    
+                    <!-- Contact Form (Communication) -->
+                    <div class="contact-form-container">
+                        <form action="#" method="POST">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Send Inquiry</button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Info (Connection) -->
+                    <div class="contact-info-container">
+                        <!-- Image Snapchat-973480667.jpg for Contact Avatar (Clear, smaller headshot) -->
+                        <img src="Snapchat-973480667.jpg" alt="Namuddu Hadijjah contact avatar" class="info-avatar" onerror="this.onerror=null;this.src='https://placehold.co/100x100/FF7043/ffffff?text=N+H';">
+                       
+                        <h4>Namuddu Hadijjah</h4>
+                        <p>I look forward to discussing your next project.</p>
+
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <!-- Email Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 20h-24v-16h24v16zm-22-14.887l10 8.081 10-8.081v-1.113h-20v1.113zm20 12.887h-20v-10.45l10 8.08 10-8.08v10.45z"/></svg>
+                                <a href="mailto:rexhadiks@gmail.com">rexhadiks@gmail.com</a>
+                            </div>
+                            <div class="contact-item">
+                                <!-- Location Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c-4.97 0-9 4.03-9 9 0 5.488 6.43 12.445 9 13.565 2.57-1.12 9-8.077 9-13.565 0-4.97-4.03-9-9-9zm0 14c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/></svg>
+                                <span>Gayaza Kiwenda</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Namuddu Hadijjah | Built with HTML & CSS | Inspired by the <a href="#about">7 C's of Web Design</a>.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
